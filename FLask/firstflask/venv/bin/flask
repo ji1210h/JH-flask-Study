@@ -1,4 +1,4 @@
-#!/Users/jihee/Github/PythonProjects/FLask/firstflask/venv/bin/python3
+#!/Users/jihee/Github/flaskproject/Flask/firstflask/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

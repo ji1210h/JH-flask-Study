@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/jihee/Github/PythonProjects/FLask/firstflask/venv"
+VIRTUAL_ENV="/Users/jihee/Github/flaskproject/Flask/firstflask/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
