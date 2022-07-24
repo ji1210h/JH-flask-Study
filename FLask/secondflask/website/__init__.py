@@ -5,7 +5,7 @@ from flask_login import LoginManager  # 로그인 기능을 쉽게 구현하도�
 
 # DB 설정하기
 db = SQLAlchemy()
-DB_NAME = "blog_db"
+DB_NAME = "blog.db"
 
 
 def create_app():
@@ -20,7 +20,7 @@ def create_app():
     app.register_blueprint(views, url_prefix="/blog")
 
     from .auth import auth
-    app.register_blueprint(auth, url_prefix="/blog")
+    app.register_blueprint(auth, url_prefix="/auth")
 
     from .models import User
     create_database(app)

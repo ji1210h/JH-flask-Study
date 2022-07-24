@@ -9,11 +9,6 @@ def login():
     return render_template("login.html")
 
 
-@auth.route("/logout")
-def logout():
-    return redirect("views.blog_home")  # 로그아웃하면 views의 blog_home으로 리다이렉트됨
-
-
 @auth.route("/sign-up", methods=['GET', 'POST'])
 def sign_up():
     email = request.form.get('email')
@@ -29,3 +24,8 @@ def sign_up():
     print(password2)
 
     return render_template("signup.html")
+
+
+@auth.route("/logout")
+def logout():
+    return redirect("views.blog_home")  # 로그아웃하면 views의 blog_home으로 리다이렉트됨
