@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager  # 로그인 기능을 쉽게 구현하도록 돕는 라이브러리
 
+from pprint import pprint
+
 # DB 설정하기
 db = SQLAlchemy()
 DB_NAME = "blog.db"
@@ -42,3 +44,4 @@ def create_database(app):
     if not path.exists("blog/" + DB_NAME):  # DB 경로가 존재하지 않는다면,
         # DB를 하나 만들어냄, create_all 함수는 SQLAlchemy에 구현되어있음
         db.create_all(app=app)
+        print('Created database!')
