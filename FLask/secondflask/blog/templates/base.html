@@ -48,6 +48,26 @@
     </div>
 </nav>
 
+{% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            {# 카테고리 == error 이라면, 실패 메시지를 출력 #}
+            {% if category == "error" %}
+                <div class="alert alert-danger alert-dismissable fade show" role="alert" style="text-align: center">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+                {# 그렇지 않다면, 성공 메시지를 출력 #}
+            {% else %}
+                <div class="alert alert-success alert-dismissable fade show" role="alert" style="text-align: center">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
 {# 변화하는 부분 #}
 {% block header %}{% endblock %}
 

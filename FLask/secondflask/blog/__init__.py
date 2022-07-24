@@ -19,7 +19,7 @@ def create_app():
 
     # blueprint 등록
     from .views import views
-    app.register_blueprint(views, url_prefix="/blog")
+    app.register_blueprint(views, url_prefix="/")
 
     from .auth import auth
     app.register_blueprint(auth, url_prefix="/auth")
